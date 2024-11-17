@@ -1,0 +1,6 @@
+also, ich habe eine Idee
+Ich soll dieses Programm fertig machen,
+sodass ich ein 100% bekomme!
+Aber ich soll andere Wörter benutzten,
+die andere Buchstaben hat, um das Programm
+besser zu debuggen!
