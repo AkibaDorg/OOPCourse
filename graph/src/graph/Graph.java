@@ -1,7 +1,6 @@
 package graph;
 import java.util.ArrayList;
 
-// TODO: something is weird with entry arraylist, where it has a nested arraylist in itself?
 public class Graph {
 	
 	class Entry{
