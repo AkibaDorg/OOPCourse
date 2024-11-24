@@ -32,8 +32,16 @@ public class Graph {
 		this("Swaws");
 	}
 	
-	
-	public void addNewCity(String name) {
+	// TODO: fix for-loop
+	public boolean addNewCity(String name) {
+
+		for(ArrayList<Entry> element : this.cities){
+			if(element.getFirst().equals(name)){
+				System.out.println("City already exists in graph!");
+				return false;
+			}
+		}
+
 		// create new city
 		Entry create = new Entry();
 		create.title = name;
@@ -45,7 +53,7 @@ public class Graph {
 		
 		// add list to overall list
 		this.cities.add(distances);
-		
+		return true;
 	}
 	
 	public void connect(String frst, String scnd, double distance) {		
