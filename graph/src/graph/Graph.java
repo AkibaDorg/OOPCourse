@@ -2,15 +2,17 @@ package graph;
 import java.util.ArrayList;
 
 public class Graph {
-	
+
+	// entry node for each city connection
 	class Entry{
 		String title;
 		double dist;
 	}
-	
+
+	// The ArrayList that holds the ArrayList of entries
 	private ArrayList<ArrayList<Entry>> cities;
 	
-	
+	// constructor
 	public Graph(String name) {
 		Entry first = new Entry();
 		first.title = name;
@@ -25,7 +27,7 @@ public class Graph {
 		this.cities.add(distances);
 		
 	}
-	
+	// default constructor
 	public Graph() {
 		this("Swaws");
 	}
@@ -74,5 +76,21 @@ public class Graph {
 		}
 		
 		
+	}
+
+	public boolean areConnected(String frst, String scnd){
+		// we need to simply see if first town name has the second one, no need to check second one really...
+		for(ArrayList<Entry> element : this.cities){
+			// check if we have the first town
+			if(element.getFirst().title.equals(frst)){
+				// check if the second town is in the ArrayList of distances
+				for(Entry distances : element){
+					// true if second town is in there and distance isn't 0; false otherwise
+                    return distances.title.equals(scnd) && distances.dist != 0;
+				}
+			}
+		}
+		// default return
+		return false;
 	}
 }
