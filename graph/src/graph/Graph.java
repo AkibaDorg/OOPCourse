@@ -12,27 +12,27 @@ public class Graph {
 
 	// The ArrayList that holds the ArrayList of entries
 	private ArrayList<ArrayList<Entry>> cities;
-
+	
 	// constructor
 	public Graph(String name) {
 		Entry first = new Entry();
 		first.title = name;
 		first.dist = 0.0;
-
+		
 		this.cities = new ArrayList<>();
-
+		
 		ArrayList<Entry> distances = new ArrayList<Entry>();
-
+		
 		distances.add(first);
-
+		
 		this.cities.add(distances);
-
+		
 	}
 	// default constructor
 	public Graph() {
 		this("Swaws");
 	}
-
+	
 	// TODO: fix for-loop
 	public void addNewCity(String name) {
 
@@ -51,36 +51,32 @@ public class Graph {
 		Entry create = new Entry();
 		create.title = name;
 		create.dist = 0.0;
-
+		
 		// create list to hold city and add city to list
 		ArrayList<Entry> distances = new ArrayList<Entry>();
 		distances.add(create);
-
+		
 		// add list to overall list
 		this.cities.add(distances);
 	}
-
-	public void connect(String frst, String scnd, double distance) {
+	
+	public void connect(String frst, String scnd, double distance) {		
 		if(frst.equals(scnd)) {
 			System.out.println("Both cities' names are the same!");
 			return;
 		}
-		if(distance <= 0.0) {
+		if(distance <= 0.0){
 			System.out.println("Improper distance given!");
 			return;
 		}
-		if(this.areConnected(frst, scnd) != -1.0){
-			System.out.println("These cities are already connected!");
-			return;
-		}
 		Entry ent1 = new Entry(), ent2 = new Entry();
-
+		
 		ent1.title = frst;
 		ent1.dist = distance;
-
+		
 		ent2.title = scnd;
 		ent2.dist = distance;
-
+		
 		// we do this in a single run
 		// check if the current element in the overall array is equal the first or second city
 		// if it does, we add the other one
@@ -94,8 +90,8 @@ public class Graph {
 				element.add(ent1);
 			}
 		}
-
-
+		
+		
 	}
 
 	public double areConnected(String frst, String scnd){
