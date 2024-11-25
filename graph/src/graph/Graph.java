@@ -69,6 +69,10 @@ public class Graph {
 			System.out.println("Improper distance given!");
 			return;
 		}
+		if(this.areConnected(frst, scnd) != -1.0){
+			System.out.println("Cities are already connected!");
+			return;
+		}
 		Entry ent1 = new Entry(), ent2 = new Entry();
 		
 		ent1.title = frst;
