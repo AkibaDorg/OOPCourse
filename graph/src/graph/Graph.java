@@ -1,5 +1,6 @@
 package graph;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Graph {
 
@@ -33,12 +34,16 @@ public class Graph {
 	}
 	
 	// TODO: fix for-loop
-	public boolean addNewCity(String name) {
+	public void addNewCity(String name) {
 
 		for(ArrayList<Entry> element : this.cities){
-			if(element.getFirst().equals(name)){
-				System.out.println("City already exists in graph!");
-				return false;
+			if(element.getFirst().title.equals(name)){
+				System.out.println("City already exists in graph!\nPlease enter a new name");
+				Scanner input = new Scanner(System.in);
+				String newname = input.next();
+				input.close();
+				addNewCity(newname);
+				return;
 			}
 		}
 
@@ -53,12 +58,15 @@ public class Graph {
 		
 		// add list to overall list
 		this.cities.add(distances);
-		return true;
 	}
 	
 	public void connect(String frst, String scnd, double distance) {		
 		if(frst.equals(scnd)) {
 			System.out.println("Both cities' names are the same!");
+			return;
+		}
+		if(distance <= 0.0){
+			System.out.println("Improper distance given!");
 			return;
 		}
 		Entry ent1 = new Entry(), ent2 = new Entry();
@@ -93,12 +101,43 @@ public class Graph {
 			if(element.getFirst().title.equals(frst)){
 				// check if the second town is in the ArrayList of distances
 				for(Entry distances : element){
-					// true if second town is in there and distance isn't 0; false otherwise
-                    return distances.title.equals(scnd) && distances.dist != 0;
+					// check each distance in the array to see if the second town is there
+					// given that a town must be in the list to be connected, this will work (for now)
+					if(distances.title.equals(scnd)){
+						return true;
+					}
 				}
 			}
 		}
 		// default return
 		return false;
+	}
+	public static void main(String[] args){
+
+		// I'm too lazy to type both of these names several times, so I did this
+		String name1, name2;
+		name1 = "Manteo";
+		name2 = "Kitty Hawk";
+
+		// add Manteo
+		Graph cities = new Graph(name1);
+
+		// add Kitty Hawk
+		cities.addNewCity(name2);
+
+		// connect Kitty Hawk and Manteo together
+		cities.connect(name1, name2, 5.0);
+
+		// tests if names are duplicated
+		cities.addNewCity(name1);
+
+		cities.addNewCity("Raleigh");
+
+
+		// should print "true false" since we connected Manteo and Kitty Hawk, but not Raleigh
+		System.out.println(cities.areConnected(name1, name2));
+		System.out.println(cities.areConnected(name1, "Raleigh"));
+
+
 	}
 }
