@@ -94,7 +94,7 @@ public class Graph {
 		
 	}
 
-	public boolean areConnected(String frst, String scnd){
+	public double areConnected(String frst, String scnd){
 		// we need to simply see if first town name has the second one, no need to check second one really...
 		for(ArrayList<Entry> element : this.cities){
 			// check if we have the first town
@@ -104,13 +104,13 @@ public class Graph {
 					// check each distance in the array to see if the second town is there
 					// given that a town must be in the list to be connected, this will work (for now)
 					if(distances.title.equals(scnd)){
-						return true;
+						return distances.dist;
 					}
 				}
 			}
 		}
 		// default return
-		return false;
+		return -1.0;
 	}
 	public static void main(String[] args){
 
