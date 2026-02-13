@@ -8,7 +8,7 @@ If by some random chance you are at the same uni as me, in that same course with
 what I put down. It derives you from learning how to problem solve (a very important skill for programming!) and is an academic violation. Best case: you get an F on the assignment; Worse Case: you get kicked out from uni. So just don't cheat.
 
 # Running the code
-All the folders are individual projects that I made in Eclipse. You should be able to download the folder(s), open them in Eclipse and run the code that way (or just run ``javaac [file name]`` and ``java [file name`` to run it directly in the console.
+All the folders are individual projects that I made in Eclipse. You should be able to download the folder(s), open them in Eclipse and run the code that way (or just run ``javaac [file name]`` and ``java [file name`` to run it directly in the console).
 No other dependencies are involved. As long as you have some Java development kit installed on your device, all programs here will run as intended. 
 
 Of course, this code isn't really meant to be ran, just read. These are all pretty simple programs that do one thing and one thing only.
