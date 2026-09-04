@@ -1,5 +1,5 @@
 # What even is this?
-In 2024, I took a class on object-orientated programming at my university. In order to help me understand Github a little bit more (and to have some place to but my code), I made this repo!
+In 2024, I took a class on object-orientated programming at my university. In order to help me understand Github a little bit more (and to have some place to put my code), I made this repo!
 
 # A Notice
 To my knowledge, this course is still taught by the same professor at my university. As such, I won't state what university it was nor the course number in order to mitigate possible cheaters.
